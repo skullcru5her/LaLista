@@ -1,0 +1,111 @@
+# Requirements
+The Requirements for this project are:
+
+* xclip
+* xautomation
+* X11
+* Xinerama
+* Xft
+* git
+* notify-send
+
+# Installation
+
+Clone the repository into /opt directory:
+
+> sudo git clone https://github.com/skullcru5her/LaLista.git
+
+> sudo chmod +x install.sh 
+
+> sudo ./install.sh 
+
+The install.sh will apply the necessary patches followed by making a clean install of the custom dmenu.
+
+After the installation in complete. Assign a shortcut to the dmenu_pentest script by going to the keyboard settings in your linux machine and adding the shortcut. I have chosen the Ctrl+D shortcut forinvoking the script but you can make it whatever you want.
+
+In the keyboard shortcuts just add:
+
+> bash /opt/LaLista/LaLista.sh
+
+And then assign a shotcut to it!
+
+Now you should be able to call the script with just the shortcut!
+
+# Usage
+
+The Menu now can be accessed using just the shortcut you created in the installation phase and arrow keys to move around and the enter key to select an options.
+
+![Start](images/start.png)
+
+## Features
+
+### Shells
+
+This options allows you to create a **one liner reverse shell** with your choice of IP and Port and then copies it to your clipboard.
+
+It created one liners in :
+
+* bash
+* nc
+* php
+* powershell
+* python
+* ruby
+
+![Shell](images/shell.gif)
+
+
+### TTY
+
+This option copies a TTY shell to your clipboard.
+
+It creates tty for:
+
+* python
+* python3
+* os-system
+
+### Stabalize Shell
+
+Selecting this option will instantly stabalize your shell and give it a tty.
+
+![Stabalize](images/stabalize.gif)
+
+### Applications
+
+This option allows you to start an application from your system. If this options is run by a non-rootuser, it will prompt you for the sudo password and then execute the application as root.
+
+![Applications](images/app.gif)
+
+### Msfvenom
+
+This option will allow you to create a msfvenom payload , by going through its options and selecting you IP and port. This will create a one liner msfvenom command for that payload and copy it to your clipboard. You can now just paste it in your terminal and create a msfvenom payload.
+
+This currently supports:
+
+* Windows (x86 and x64)
+	* bind
+	* reverse
+
+* Linux (x86 and x64)
+	* bind
+	* reverse
+* Java
+	* jsp_reverse_shell
+
+![Msfvenom](images/msfvenom.gif)
+
+### Mimikatz
+
+Copies the selected command to your clipboard.
+
+Currently supports:
+
+* privilege::debug
+* sekurlsa::logonPasswords
+* lsadump::sam
+
+# Credits
+
+* [Leo Smith](www.leosmith.xyz) : Thank you for the bug fixes and introducing me to dMenu!
+* [John Hammond](https://www.johnhammond.org/) : For the idea of adding xautomation
